@@ -1,1 +1,0 @@
-<button class="btn px-4 py-2 rounded hover:shadow bg-white font-semibold">{{ $text }}</button>
