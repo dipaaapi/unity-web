@@ -1,10 +1,4 @@
-<style>
-    .row1 {
-        height: auto;
-        background-color: #16337f;
-        position: relative !important;
-    }
-
+{{-- <style>
     .text-container > img {
         position: absolute;
         z-index: 1;
@@ -90,15 +84,47 @@
             width: 100%;
         }
     }
+</style> --}}
+<style>
+    .row1 {
+        width: 100%;
+        height: 90vh;
+        background-color: #16337f;
+        position: relative;
+    }
+    .textContainer {
+        background: url('/img/assets/text container.png');
+        background-position: center;
+        background-size: cover;
+        padding: 2rem;
+        width: 100%;
+        height: 100%;
+    }
+    .imgContainer {
+        display: none;
+    }
+    .gov {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    @media (max-width: 425px) {
+        .row1 {height: 75vh;}
+        .imgContainer {
+            display: block;
+        }
+    }
+    @media (max-width: 768px) {
+        .row1 {height: 90vh;}
+        .imgContainer {
+            display: block;
+        }
+    }
 </style>
 
-<div class="row1 p-3">
-    <div class="inner-row1">
-        <p class="text-white font-semibold md:text-3xl text-xs">"The province of Camarines Sur envisioned as the pioneer in establishing the first IT hub managed and owned by the provincial government. Spearheading this plan through focusing on game development, a booming industry in the era."</p>
-        <p class="text-white font-black uppercase md:text-5xl text-sm md:mt-5 mt-0 ml-5">gov. luigi villafuerte</p>
+<div class="row1">
+    <div class="w-[120%] content-center grid">
     </div>
-    <div class="text-container">
-        <img src="{{ asset('/img/assets/text container.png') }}" alt="text container" class="img-responsive">
-    </div>
-    <img src="{{ asset('/img/assets/gov luigi.png') }}" alt="gov" class="">
+    <img src="{{ asset('/img/assets/text container.png') }}" alt="text container" class="absolute top-10 right-0 left-0 imgContainer">
+    <img src="{{ asset('/img/assets/gov luigi.png') }}" alt="gov" class="gov">
 </div>

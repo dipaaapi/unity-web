@@ -1,16 +1,19 @@
 <style>
     .row5 {
         display: flex;
-        padding-left: 5%;
-        margin: 0;
-        gap: 5%;
         background-color: #55ddff;
-        align-items: center;
     }
     .inner-row5-left {
-        width: 60%;
-        display: block;
-        align-content: center;
+        color: #444444;
+        text-align: left;
+        width: 80%;
+        padding: 5%;
+    }
+    .inner-row5-left > p:nth-child(1) {
+        font-size: 2.5em;
+        text-transform: capitalize;
+        font-weight: 900;
+        color: black;
     }
     .inner-row5-right > img {
         height: 100%;
@@ -25,28 +28,41 @@
         display: block;
         text-align: center;
     }
-    .inner-row5-left > p:nth-child(1) {
-        font-size: 4rem;
-        text-transform: capitalize;
-        font-weight: bold;
-        color: #1c1c1c;
-    }
     ul {
         list-style-type: square;
         list-style-position: inside;
         width: 80%;
         margin-bottom: 3vh;
     }
-    ul > li {
-        font-size: 2.5em;
-        text-transform: capitalize;
-        font-weight: bold;
+    @media (max-width: 1440px) {
+        .inner-row5-left > p:nth-child(1) {font-size: 3.5rem;}
+        ul > li {
+            font-size: 2.5rem;
+            text-transform: capitalize;
+        }
     }
-    @media (max-width: 425px) {
+    @media (max-width: 1024px) {
+        .inner-row5-left > p:nth-child(1) {
+            font-size: 2.5rem;
+            text-transform: capitalize;
+            font-weight: bold;
+            color: #1c1c1c;
+        }
+        ul > li {
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+    }
+    @media (max-width: 768px) {
         .row5 {
             display: block;
-            padding-left: 0%;
         }
+        .inner-row5-left {
+            width: 75%;
+            margin: auto;
+        }
+    }
+    @media (max-width: 425px) {
         .inner-row5-right {
             padding-top: 5%;
         }
@@ -69,15 +85,17 @@
         }
     }
 </style>
-<div class="row5">
+<div class="h-100 row5">
     <div class="inner-row5-left">
         <p class="">advance course</p>
-        <ul class="">
+        <ul class="mb-5">
             <li class="">advance game development course</li>
         </ul>
-        <a href={{ __('/') }} class="uppercase font-bold py-2 px-4 text-white rounded hover:shadow bg-[#af2c3b]">enroll now</a>
+        <div class="text-center">
+            <a href={{ __('/') }} class="uppercase font-bold py-2 px-4 text-white rounded hover:shadow bg-[#af2c3b]">enroll now</a>
+        </div>
     </div>
-    <div class="inner-row5-right">
-        <img src="{{ asset('/img/assets/unity course 1.png') }}" alt="unity course 1" class="">
+    <div class="inner-row5-right content-end col-span-2">
+        <img src="{{ asset('/img/assets/unity course 1.png') }}" alt="unity course 1" class="h-auto">
     </div>
 </div>

@@ -1,11 +1,13 @@
 <style>
     .row4 {
-        display: flex;
-        padding: 5%;
-        margin: 0;
-        gap: 5%;
+        display: grid;
+        height: 80vh;
         background-color: #dcecff;
-        align-items: center;
+    }
+    .course2 {
+        width: 80%;
+        display: block;
+        margin: auto 0 auto auto;
     }
     .inner-row4-left {
         width: 60%;
@@ -19,7 +21,13 @@
     .inner-row4-right {
         color: #444444;
         text-align: left;
-        width: auto;
+        margin: 0 auto;
+        padding: 0 5%;
+    }
+    .inner-row4-right > ul > li {
+        font-size: 2rem;
+        text-transform: capitalize;
+        font-weight: 700;
     }
     .inner-row4-right > a {
         width: 40%;
@@ -38,25 +46,51 @@
         width: 80%;
         margin-bottom: 3vh;
     }
-    ul > li {
-        font-size: 2.5em;
-        text-transform: capitalize;
-        font-weight: bold;
+    @media (max-width: 768px) {
+        .row4 {
+            display: block;
+            padding: 5%;
+            height: auto;
+        }
+        .course2 {margin: 0 auto;}
+        .inner-row4-right {
+            width: 75vw;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .inner-row4-right > p:nth-child(1) {
+            font-size: 3.5rem;
+            text-transform: capitalize;
+            font-weight: bolder;
+            color: #1c1c1c;
+            text-align: center;
+        }
+        .inner-row4-right > a {margin: auto;}
     }
     @media (max-width: 425px) {
         .row4 {
             display: block;
+            height: auto;
+            padding: 5%;
         }
         .inner-row4-left {
             width: 100%;
         }
         .inner-row4-right > p:nth-child(1) {
             font-size: 3rem;
+            text-transform: capitalize;
+            font-weight: bolder;
+            color: #1c1c1c;
             text-align: center;
         }
         ul {
             width: 80%;
             margin: 0 auto;
+        }
+        .inner-row4-right {
+            width: 90vw;
+            margin: 0 auto;
+            text-align: left;
         }
         .inner-row4-right > ul > li {
             font-size: 1rem;
@@ -66,11 +100,11 @@
         }
     }
 </style>
-<div class="row4">
-    <div class="inner-row4-left">
-        <img src="{{ asset('/img/assets/unity course 2.jpg') }}" alt="unity course 2" class="">
+<div class="row4 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 content-center">
+    <div class="course2">
+        <img src="{{ asset('/img/assets/unity course 2.jpg') }}" alt="unity course 2" class="rounded-lg shadow-xl">
     </div>
-    <div class="inner-row4-right">
+    <div class="inner-row4-right w-full">
         <p class="">basic courses</p>
         <ul class="">
             <li class="">beginner course: c#</li>

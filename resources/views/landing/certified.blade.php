@@ -17,7 +17,20 @@
         font-size: 4rem;
         margin: 0 auto;
     }
-
+    @media (max-width: 768px) {
+        .row3 {
+            display: block;
+            background-position: inherit;
+            padding: 10%;
+        }
+        .inner-row3-left {
+            color: white;
+            text-align: center;
+            font-size: 3rem;
+            margin: 0 auto;
+        }
+        .inner-row3-right > img {margin: auto;}
+    }
     @media (max-width: 425px) {
         .row3 {
             display: block;
